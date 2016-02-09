@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1455016849 source:/home/alexandre/Documents/l2EEA_2016/2E201/codeblocks/Library_Comics/comics.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"comics.h"
+
+1455022242 /home/alexandre/Documents/l2EEA_2016/2E201/codeblocks/Library_Comics/comics.h
+
+1455022618 source:/home/alexandre/Documents/l2EEA_2016/2E201/codeblocks/Library_Comics/library.c
+	<stdlib.h>
+	<stdio.h>
+	"library.h"
+
+1455016806 /home/alexandre/Documents/l2EEA_2016/2E201/codeblocks/Library_Comics/library.h
+	"comics.h"
+
+1454496999 source:/home/alexandre/Documents/l2EEA_2016/2E201/codeblocks/Library_Comics/library_OS.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"library.h"
+
+1455009094 source:/home/alexandre/Documents/l2EEA_2016/2E201/codeblocks/Library_Comics/main.c
+	<stdio.h>
+	<stdlib.h>
+	"comics.h"
+	"library.h"
+
