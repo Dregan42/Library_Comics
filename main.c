@@ -15,12 +15,9 @@ void show_menu(int* val){
 	printf("5 - modify : Modify one comic book\n");
 	printf("0 - quit : Exit the program\n\n");
 	printf("What do you want to do ? ");
-	do{
-            scanf("%d",&rep);
-            if(scanf("%d",&rep) != 1){
-                printf("Entry Error. Please try again.");
-            }
-	}while(scanf("%d",&rep) != 1);
+
+    scanf("%d",&val);
+
 	*val = rep;
 }
 
