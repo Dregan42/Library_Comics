@@ -15,9 +15,21 @@ Library* create_library(){
     return L;
 }
 
-Library* add_comics_to_library(){
-
-    return NULL;
+Library* add_comics_to_library(Library *L){
+    L->nbBooks ++;
+    char author[40];
+    char title[200];
+    char editor[40];
+    printf("\nNew Comics :\n");
+    printf("\nAuthor : ");
+    scanf("%s", author);
+    printf("\nTitle : ");
+    scanf("%s",title);
+    printf("\nEditor :");
+    scanf("%s",editor);
+    L->Tab_comics[L->nbBooks-1] = create_comics(author,title, editor);
+    L->Tab_comics[L->nbBooks-1]->id = L->nbBooks-1;
+    return L;
 }
 
 Library* remove_comics_from_library(int comics_id){
@@ -26,12 +38,12 @@ Library* remove_comics_from_library(int comics_id){
 }
 
 void show_library(Library *L){
-    if(L){
         int i;
+        printf("\nId\tTitle\tAuthor\tEditor\n");
+        printf("-------------------------------\n");
         for(i=0;i<L->nbBooks;i++){
-            printf("%d\t%s\t%s",L->Tab_comics[i]->id,L->Tab_comics[i]->title,L->Tab_comics[i]->author);
+            printf(" %d\t %s\t %s \t%s\n",L->Tab_comics[i]->id,L->Tab_comics[i]->title,L->Tab_comics[i]->author,L->Tab_comics[i]->editor);
         }
-    }
 }
 
 void show_comics(int comics_id){

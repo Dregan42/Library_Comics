@@ -17,7 +17,7 @@ int show_menu(int choice){
 	printf("What do you want to do ? ");
 
     if((scanf("%d",&choice))!=1){
-        printf("Invalid choice : Wrong format.");
+        printf("\nInvalid choice : Wrong format.\n");
         exit(1);
     }
     rep = choice;
@@ -33,7 +33,7 @@ int main(int argc, char **argv){
 
     Library *L = create_library();
 
-	int choice;
+	int choice, id_choice;
 
 	do{
 
@@ -43,13 +43,30 @@ int main(int argc, char **argv){
 				printf("\nBye.\n");
 				break;
 			case 1:
-				if(1){
+				if(L->nbBooks != 0){
 					show_library(L);
+				}
+				else{
+                    printf("The library is empty.\n");
 				}
 				break;
 			case 2:
+                if(L && (L->nbBooks != 0)){
+                    if(scanf("%d",&id_choice)!=1){
+                        printf("Invalid choice : Wrong format.");
+                        exit(1);
+                    }
+                    if(id_choice<=L->nbBooks)
+                        show_comics((L->Tab_comics[id_choice]->id));
+                }
+                else{
+                    printf("The library is empty.\n");
+                }
                 break;
 			case 3:
+                    if(L){
+                        L = add_comics_to_library(L);
+                    }
                 break;
             case 4:
                 break;
