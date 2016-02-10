@@ -17,7 +17,9 @@ typedef struct comics
 		char* comment;
 	} Comics;
 
-Comics *create_comics(char* author, char* title, char* editor); // Create a comic with an Author, a Title and an Editor. It initialize its States. Comments aren't initialized.
+Comics *create_comics(char* author, char* title, char* editor); // Create a comic with an Author, a Title and an Editor. It initialize its States. Id and Comments aren't initialized.
+
+/*The Id is initialized in the function add_comics_to_library() in the file "library.c"*/
 
 Comics *modify_title(Comics *comics, char* title); //change the current title.
 Comics *modify_author(Comics *comics, char* author); //change the current author.
