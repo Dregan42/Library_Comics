@@ -4,8 +4,8 @@
 #include "comics.h"
 #include "library.h"
 
-void show_menu(int* val){
-	int rep;
+int show_menu(int choice){
+    int rep;
 	printf("\n\t MENU\n");
 	printf("\t======\n\n");
 	printf("1 - show : Show the library\n");
@@ -16,9 +16,12 @@ void show_menu(int* val){
 	printf("0 - quit : Exit the program\n\n");
 	printf("What do you want to do ? ");
 
-    scanf("%d",&val);
-
-	*val = rep;
+    if((scanf("%d",&choice))!=1){
+        printf("Invalid choice : Wrong format.");
+        exit(1);
+    }
+    rep = choice;
+    return rep;
 }
 
 int main(int argc, char **argv){
@@ -34,7 +37,7 @@ int main(int argc, char **argv){
 
 	do{
 
-		show_menu(&choice);
+		choice = show_menu(choice);
 		switch(choice){
 			case 0:
 				printf("\nBye.\n");
@@ -55,7 +58,6 @@ int main(int argc, char **argv){
             default:
                 printf("\nThis option does not exist. Please try again.\n");
 		}
-
 	}while(choice);
 
 	return 0;
