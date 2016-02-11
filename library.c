@@ -15,6 +15,7 @@ Library* create_library(){
     return L;
 }
 
+//create an unique ID for a comics in the library L
 Library* add_comics_to_library(Library *L){
     L->nbBooks ++;
     char author[40];
@@ -38,14 +39,20 @@ Library* remove_comics_from_library(int comics_id){
 }
 
 void show_library(Library *L){
-        int i;
-        printf("\nId\tTitle\tAuthor\tEditor\n");
-        printf("-------------------------------\n");
-        for(i=0;i<L->nbBooks;i++){
-            printf(" %d\t %s\t %s \t%s\n",L->Tab_comics[i]->id,L->Tab_comics[i]->title,L->Tab_comics[i]->author,L->Tab_comics[i]->editor);
-        }
+    int i;
+    printf("\nId\tTitle\tAuthor\tEditor\n");
+    printf("---\t------\t-------\t-------\n");
+    for(i=0;i<L->nbBooks;i++){
+        printf(" %d\t %s\t %s \t%s\n",L->Tab_comics[i]->id,L->Tab_comics[i]->title,L->Tab_comics[i]->author,L->Tab_comics[i]->editor);
+    }
 }
 
-void show_comics(int comics_id){
-
+void show_comics(Library *L, int comics_id){
+    printf("\nTitle : %s", L->Tab_comics[comics_id]->title);
+    printf("\nAuthor : %s", L->Tab_comics[comics_id]->author);
+    printf("\nEditor : %s", L->Tab_comics[comics_id]->editor);
+    printf("\nRate : %d", L->Tab_comics[comics_id]->rate);
+    printf("\nRead ? %d", L->Tab_comics[comics_id]->read);
+    printf("\nComments : %s", L->Tab_comics[comics_id]->comment);
+    printf("\n");
 }

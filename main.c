@@ -52,12 +52,13 @@ int main(int argc, char **argv){
 				break;
 			case 2:
                 if(L && (L->nbBooks != 0)){
+                    printf("\nComics' Id :");
                     if(scanf("%d",&id_choice)!=1){
                         printf("Invalid choice : Wrong format.");
                         exit(1);
                     }
                     if(id_choice<=L->nbBooks)
-                        show_comics((L->Tab_comics[id_choice]->id));
+                        show_comics(L, (L->Tab_comics[id_choice]->id));
                 }
                 else{
                     printf("The library is empty.\n");
