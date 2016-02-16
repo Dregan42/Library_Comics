@@ -26,9 +26,9 @@ int show_menu(int choice){
 
 int main(int argc, char **argv){
 
-	printf("\t\t|====================|\n");
-	printf("\t\t|= COMICS INVENTORY =|\n");
-	printf("\t\t|====================|\n");
+	printf("\t\t|======================|\n");
+	printf("\t\t|= MY COMICS' LIBRARY =|\n");
+	printf("\t\t|======================|\n");
 	printf("\t\t\t\t\tby Alexandre Turrel\n");
 
     Library *L = create_library();
@@ -47,35 +47,35 @@ int main(int argc, char **argv){
 					show_library(L);
 				}
 				else{
-                    printf("The library is empty.\n");
+                    			printf("The library is empty.\n");
 				}
 				break;
 			case 2:
-                if(L && (L->nbBooks != 0)){
-                    printf("\nComics' Id :");
-                    if(scanf("%d",&id_choice)!=1){
-                        printf("Invalid choice : Wrong format.");
-                        exit(1);
-                    }
-                    if(id_choice<=L->nbBooks)
-                        show_comics(L, (L->Tab_comics[id_choice]->id));
-                }
-                else{
-                    printf("The library is empty.\n");
-                }
-                break;
+                		if(L && (L->nbBooks != 0)){
+                    			printf("\nComics' Id :");
+                    			if(scanf("%d",&id_choice)!=1){
+                        			printf("Invalid choice : Wrong format.");
+                        			exit(1);
+                    			}
+                    			if(id_choice<=L->nbBooks)
+                        			show_comics(L, (L->Tab_comics[id_choice]->id));
+                		}
+                		else{
+                    			printf("The library is empty.\n");
+                		}
+                	break;
 			case 3:
-                    if(L){
-                        L = add_comics_to_library(L);
-                    }
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            default:
-                printf("\nThis option does not exist. Please try again.\n");
-		}
+                    		if(L){
+                        		L = add_comics_to_library(L);
+                    		}
+                	break;
+            		case 4:
+                	break;
+            		case 5:
+                	break;
+            		default:
+                		printf("\nThis option does not exist. Please try again.\n");
+			}
 	}while(choice);
 
 	return 0;
