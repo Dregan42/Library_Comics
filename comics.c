@@ -18,21 +18,21 @@ Comics *create_comics(char* author, char* title, char* editor){
 	return comics;
 }
 
-Comics *modidy_title(Comics *comics, char* title){
+Comics *modify_title(Comics *comics, char* title){
 	free(comics->title);
 	comics->title = (char*)malloc(sizeof(char));
 	strcpy(comics->title, title);
 	return comics;
 }
 
-Comics *modidy_author(Comics *comics, char* author){
+Comics *modify_author(Comics *comics, char* author){
 	free(comics->author);
 	comics->author = (char*)malloc(sizeof(char));
 	strcpy(comics->author, author);
 	return comics;
 }
 
-Comics *modidy_editor(Comics *comics, char* editor){
+Comics *modify_editor(Comics *comics, char* editor){
 	free(comics->editor);
 	comics->editor = (char*)malloc(sizeof(char));
 	strcpy(comics->editor, editor);
@@ -59,7 +59,7 @@ Comics *change_state_rate(Comics *comics, Rate rate){
 	return comics;
 }
 
-Comics *modidy_comment(Comics *comics, char* comment){
+Comics *modify_comment(Comics *comics, char* comment){
 	if(comics->comment){
 		delete_comment(comics);
 		comics->comment = (char*)malloc(sizeof(char));
